@@ -35,5 +35,4 @@ const app = Vue.createApp({
             .catch(error => console.log(error));
     }
 }).mount('#app')
-
-// Rerenced from Harold's Studio Ghlibli example
+// Rerenced from Harold's Studio Ghibli example
