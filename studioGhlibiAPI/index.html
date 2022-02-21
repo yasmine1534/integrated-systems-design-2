@@ -8,6 +8,12 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Favicon image referenced from https://www.pngaaa.com/search/studio-ghibli-png/ -->
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -38,8 +44,7 @@
             </div>
 
 
-            <div v-for="(film, filmKey) in films" :key="film.id" class="card filmCard"
-                @click="showFilm(filmKey), scrollToElement()">
+            <div v-for="(film, filmKey) in films" :key="film.id" class="card filmCard" @click="showFilm(filmKey)">
                 <img class="cardImage" :src="film.image">
                 <h2 class="filmsTitle">{{ film.title }}</h2>
                 <p>{{ film.producer }} - {{ film.release_date }}</p>
@@ -83,12 +88,6 @@
                 <!-- <p>{{ film.people.name }} </p> -->
             </div>
         </section>
-
-
-
-
-
-
     </main>
 
     <footer>
