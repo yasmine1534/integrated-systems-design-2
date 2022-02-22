@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "vue-ico": "^1.0.15"
+  },
+  "dependencies": {
+    "vue-material": "^1.0.0-beta-15"
+  }
+}

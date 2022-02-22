@@ -17,12 +17,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Use of Google Material Icons with Vue referenced from https://dev.to/reiallenramos/how-to-use-material-design-with-vue-5aa9  -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
 
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
         rel="stylesheet">
-
 
     <link rel="stylesheet" href="style.css">
 
@@ -67,17 +67,23 @@
                 <div id="cardDetails">
                     <div class="card descriptionCard">
                         <h2 class="cardTitle">{{ film.release_date }}</h2>
-                        <p class="smallParagraph">Release date</p>
+                        <p class="smallParagraph">
+                            <span class="material-icons">event</span>
+                            Release date</p>
                     </div>
 
                     <div class="card descriptionCard">
                         <h2 class="cardTitle">{{ film.running_time }} min</h2>
-                        <p class="smallParagraph">Running time</p>
+                        <p class="smallParagraph">
+                            <span class="material-icons">timer</span>
+                            Running time</p>
                     </div>
 
                     <div class="card descriptionCard">
                         <h2 class="cardTitle">{{ film.rt_score }}&percnt;</h2>
-                        <p class="smallParagraph">Rotten Tomato Score</p>
+                        <p class="smallParagraph">
+                            <span class="material-icons">scoreboard</span>
+                            Rotten Tomato Score</p>
                     </div>
                 </div>
 
@@ -89,7 +95,10 @@
                 </div>
 
                 <button id="backTopButton" @click="scrollTop()">
-                    <img src="img/arrow-up.png" alt="arrow up icon">
+                    <!-- <img src="img/arrow-up.png" alt="arrow up icon"> -->
+                    <span class="material-icons">
+                        arrow_upward
+                    </span>
                 </button>
             </div>
         </section>

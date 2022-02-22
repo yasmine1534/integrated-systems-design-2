@@ -40,6 +40,11 @@ h3 {
     padding: 15px 0;
 }
 
+.material-icons {
+    vertical-align: text-bottom;
+    font-size: 1.2em;
+}
+
 #banner img {
     width: 100%;
     min-height: 500px;
@@ -73,8 +78,8 @@ h3 {
     z-index: 999;
 }
 
-#backTopButton img {
-    width: 30px;
+#backTopButton span {
+    font-size: 30px;
 }
 
 /* Films plural card list */
