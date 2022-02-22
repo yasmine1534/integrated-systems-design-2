@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Studio Ghlibli API</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon image referenced from https://www.pngaaa.com/search/studio-ghibli-png/ -->
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Development version of VueJS -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- Axios for making HTTP requests.  -->
+    <script src="https://unpkg.com/axios@0.24.0/dist/axios.min.js"></script>
+</head>
+
+
+<body>
+    <nav id="banner">
+        <img src="img/banner.png" alt="Studio Ghibli banner">
+    </nav>
+
+    <main id="app">
+        <section id="films" v-if="films">
+            <div id="title" ref="title">
+                <!-- Logo reference from https://www.pngwing.com/en/free-png-dojar -->
+                <img id="logo" alt="Studio Ghibli Logo" src="img/logo.png">
+                <h1>Film List and Information</h1>
+            </div>
+
+
+            <div v-for="(film, filmKey) in films" :key="film.id" class="card filmCard" @click="showFilm(filmKey)">
+                <img class="cardImage" :src="film.image">
+                <h2 class="filmsTitle">{{ film.title }}</h2>
+                <p>{{ film.producer }} - {{ film.release_date }}</p>
+            </div>
+        </section>
+
+        <section id="film" ref="film" v-if="film">
+            <img id="filmBanner" :src="film.movie_banner">
+
+            <div id="filmContent">
+
+                <div id="filmName">
+                    <h1>{{ film.title }}</h1>
+                    <h2>{{ film.original_title }} | {{ film.original_title_romanised }}</h2>
+                </div>
+
+                <div id="cardDetails">
+                    <div class="card descriptionCard">
+                        <h2 class="cardTitle">{{ film.release_date }}</h2>
+                        <p class="smallParagraph">Release date</p>
+                    </div>
+
+                    <div class="card descriptionCard">
+                        <h2 class="cardTitle">{{ film.running_time }} min</h2>
+                        <p class="smallParagraph">Running time</p>
+                    </div>
+
+                    <div class="card descriptionCard">
+                        <h2 class="cardTitle">{{ film.rt_score }}&percnt;</h2>
+                        <p class="smallParagraph">Rotten Tomato Score</p>
+                    </div>
+                </div>
+
+                <div id="cardSummary">
+                    <p><span>Director: </span>{{ film.director }}</p>
+                    <p><span>Producer: </span>{{ film.producer }}</p>
+
+                    <p class="description">{{ film.description }}</p>
+                </div>
+
+                <button id="backTopButton" @click="scrollTop()">
+                    <img src="img/arrow-up.png" alt="arrow up icon">
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <h3>Yasmine Samir Abdelrahman and Natalie Tan | Integrated Systems Design 2</h3>
+    </footer>
+
+
+    <script src="script.js" async defer></script>
+</body>
+
+</html>
