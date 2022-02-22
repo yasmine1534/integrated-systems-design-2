@@ -19,8 +19,11 @@ const app = Vue.createApp({
             var container = this.$refs.film;
             container.scrollIntoView({behavior: 'smooth'});
             //End of Reference
+        },
+        scrollTop() {
+            var top = this.$refs.title;
+            top.scrollIntoView({behavior: 'smooth'});
         }
-
     },
     mounted() {
         /* Using axios to fetch data. 
